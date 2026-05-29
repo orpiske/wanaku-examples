@@ -35,31 +35,31 @@
         <dependency>
             <groupId>ai.wanaku</groupId>
             <artifactId>core-exchange</artifactId>
-            <version>${project.version}</version>
+            <version>${wanaku.version}</version>
         </dependency>
 
         <dependency>
             <groupId>ai.wanaku</groupId>
             <artifactId>wanaku-capabilities-base</artifactId>
-            <version>${project.version}</version>
+            <version>${wanaku.version}</version>
         </dependency>
 
         <dependency>
             <groupId>ai.wanaku</groupId>
             <artifactId>wanaku-capabilities-tools</artifactId>
-            <version>${project.version}</version>
+            <version>${wanaku.version}</version>
         </dependency>
 
         <dependency>
             <groupId>ai.wanaku</groupId>
             <artifactId>wanaku-capabilities-runtime-camel</artifactId>
-            <version>${project.version}</version>
+            <version>${wanaku.version}</version>
         </dependency>
 
         <dependency>
             <groupId>ai.wanaku</groupId>
             <artifactId>core-service-discovery</artifactId>
-            <version>${project.version}</version>
+            <version>${wanaku.version}</version>
         </dependency>
 
         <dependency>

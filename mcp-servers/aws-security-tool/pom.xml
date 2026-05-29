@@ -23,7 +23,7 @@
         <dependency>
             <groupId>ai.wanaku</groupId>
             <artifactId>wanaku-mcp-forward-discovery</artifactId>
-            <version>${project.version}</version>
+            <version>${wanaku.version}</version>
         </dependency>
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
