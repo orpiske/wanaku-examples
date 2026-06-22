@@ -13,7 +13,7 @@ Via the GitHub UI:
 Via the CLI:
 
 ```shell
-export RELEASE_VERSION=0.1.0
+export RELEASE_VERSION=0.1.1
 gh workflow run release -f releaseVersion=${RELEASE_VERSION}
 ```
 
