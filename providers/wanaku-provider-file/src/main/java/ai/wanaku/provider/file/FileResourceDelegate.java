@@ -1,4 +1,4 @@
-package ai.wanaku.provider.ftp.file;
+package ai.wanaku.provider.file;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
