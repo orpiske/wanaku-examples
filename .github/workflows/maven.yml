@@ -10,7 +10,9 @@ name: Java CI with Maven
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - "main"
+      - '[0-9]*.[0-9]*.x'
 
 env:
   PROJECTS: ${{ github.workspace }}
@@ -30,12 +32,22 @@ jobs:
       fail-fast: true
 
     steps:
+    - name: Determine Wanaku ref
+      id: wanaku-ref
+      shell: bash
+      run: |
+        BRANCH="${{ github.base_ref }}"
+        if git ls-remote --heads https://github.com/wanaku-ai/wanaku.git "$BRANCH" | grep -q .; then
+          echo "ref=$BRANCH" >> $GITHUB_OUTPUT
+        else
+          echo "ref=main" >> $GITHUB_OUTPUT
+        fi
     - name: Checkout Wanaku Main project
       uses: actions/checkout@v4
       with:
         repository: wanaku-ai/wanaku
         persist-credentials: false
-        ref: main
+        ref: ${{ steps.wanaku-ref.outputs.ref }}
         path: wanaku
     - name: Set up JDK 21
       uses: actions/setup-java@v4
