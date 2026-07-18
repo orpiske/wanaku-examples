@@ -8,17 +8,20 @@ Via the GitHub UI:
 
 1. Go to **Actions** > **release** > **Run workflow**.
 2. Enter the release version (e.g., `0.1.0`).
-3. Click **Run workflow**.
+3. Enter the release branch (e.g., `main` or `0.2.x`).
+4. Click **Run workflow**.
 
 Via the CLI:
 
 ```shell
 export RELEASE_VERSION=0.1.1
-gh workflow run release -f releaseVersion=${RELEASE_VERSION}
+export RELEASE_BRANCH=0.1.x
+gh workflow run release -f releaseVersion=${RELEASE_VERSION} -f releaseBranch=${RELEASE_BRANCH}
 ```
 
 The workflow will:
 
+- Check out the specified release branch.
 - Create a branch named after the version (e.g., `0.1.0`).
 - Build the project with the `dist` profile.
 - Build and push container images for x86 and arm64 to Quay.io.
@@ -29,15 +32,17 @@ The workflow will:
 
 If you need to release manually, follow these steps:
 
-#### **1. Set the version**
+#### **1. Set the version and branch**
 
 ```shell
 export RELEASE_VERSION=0.1.0
+export RELEASE_BRANCH=0.1.x
 ```
 
 #### **2. Create the release branch**
 
 ```shell
+git checkout ${RELEASE_BRANCH}
 git checkout -b ${RELEASE_VERSION}
 git push origin ${RELEASE_VERSION}
 ```
