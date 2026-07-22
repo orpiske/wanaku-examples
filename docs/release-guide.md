@@ -28,6 +28,15 @@ The workflow will:
 - Run JReleaser to publish the release artifacts on GitHub.
 - Create and push multi-arch container manifests.
 
+### **Version Bump**
+
+To update all modules to a new Wanaku version:
+
+```shell
+export NEW_VERSION=0.2.0
+mvn versions:update-parent -DparentVersion=${NEW_VERSION} -DgenerateBackupPoms=false && mvn versions:update-child-modules -DgenerateBackupPoms=false && mvn versions:set-property -Dproperty=wanaku.version -DnewVersion=${NEW_VERSION} -DgenerateBackupPoms=false
+```
+
 ### **Manual Release**
 
 If you need to release manually, follow these steps:
