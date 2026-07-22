@@ -34,7 +34,7 @@ To update all modules to a new Wanaku version:
 
 ```shell
 export NEW_VERSION=0.3.0-SNAPSHOT
-mvn versions:update-parent -DparentVersion=${NEW_VERSION} -DgenerateBackupPoms=false && mvn versions:update-child-modules -DgenerateBackupPoms=false && mvn versions:set-property -Dproperty=wanaku.version -DnewVersion=${NEW_VERSION} -DgenerateBackupPoms=false
+mvn versions:update-parent -DparentVersion=${NEW_VERSION} -DgenerateBackupPoms=false && mvn versions:set -DnewVersion=${NEW_VERSION} -DgenerateBackupPoms=false && mvn versions:set-property -Dproperty=wanaku.version -DnewVersion=${NEW_VERSION} -DgenerateBackupPoms=false
 ```
 
 ### **Manual Release**
