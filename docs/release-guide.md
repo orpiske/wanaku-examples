@@ -44,8 +44,8 @@ If you need to release manually, follow these steps:
 #### **1. Set the version and branch**
 
 ```shell
-export RELEASE_VERSION=0.1.0
-export RELEASE_BRANCH=0.1.x
+export RELEASE_VERSION=0.2.0
+export RELEASE_BRANCH=0.2.x
 ```
 
 #### **2. Create the release branch**
